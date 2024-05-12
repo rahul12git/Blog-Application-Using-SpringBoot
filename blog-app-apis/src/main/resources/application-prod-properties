@@ -1,0 +1,4 @@
+
+spring.datasource.url=jdbc:mysql://blog-db.cbsaswi6ar9v.ap-southeast-2.rds.amazonaws.com:3306/blog_app_apis?allowPublicKeyRetrieval=true&useSSL=false
+spring.datasource.username=Rahul
+spring.datasource.password=Rahul48187
