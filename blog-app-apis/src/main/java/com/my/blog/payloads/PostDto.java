@@ -1,6 +1,7 @@
 package com.my.blog.payloads;
 
 import com.my.blog.entities.Category;
+import com.my.blog.entities.Comment;
 import com.my.blog.entities.User;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -9,6 +10,9 @@ import org.springframework.stereotype.Service;
 
 
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -25,5 +29,6 @@ private Integer id;
 
     private UserDto user;
 
+private Set<CommentDto> comments= new HashSet<>();
 
 }

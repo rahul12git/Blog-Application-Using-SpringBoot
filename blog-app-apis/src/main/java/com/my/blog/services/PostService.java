@@ -18,7 +18,7 @@ public interface PostService {
     void deletePost(Integer postId);
 
   //get all post
-   PostResponse getAllPost(Integer pageNumber, Integer pageSize);
+   PostResponse getAllPost(Integer pageNumber, Integer pageSize,String sortBy,String sortDir);
   //get  single posts by id
    PostDto getPostById(Integer postId);
 
@@ -29,6 +29,7 @@ public interface PostService {
   List<PostDto> getPostsByUser(Integer postId);
 
     //Search Post
-    List<Post> searchPosts(String keyword);
+    List<PostDto> searchPosts(String keyword);
+
 
 }

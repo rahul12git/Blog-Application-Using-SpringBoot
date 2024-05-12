@@ -8,6 +8,7 @@ import com.my.blog.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -32,7 +33,10 @@ public class UserController {
         return ResponseEntity.ok(updateUser);
     }
 
-    @DeleteMapping("/deleteBy/{userId}")
+    //Admin
+    // Delete - delete user
+    @PreAuthorize("hasRole('ADMIN')")
+    @DeleteMapping("/{userId}")
     public ResponseEntity<ApiResponse> deleteUser(@PathVariable("userId") Integer uid) {
         userService.deleteUser(uid);
         return new ResponseEntity<>(new ApiResponse("User deleted Successfully", true), HttpStatus.OK);

@@ -7,6 +7,8 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name="posts")
@@ -29,4 +31,7 @@ public class Post {
     private   Category category;
     @ManyToOne
     private User user;
+
+    @OneToMany(mappedBy = "post" , cascade = CascadeType.ALL)
+    private Set<Comment> comments = new HashSet<>();
 }
